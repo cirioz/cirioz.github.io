@@ -1,40 +1,199 @@
-# CV data — fill these in over time. Each top-level item is a section on /cv/.
-# Supported types: map, time_table, list, nested_list. See al-folio examples.
+# CV data — rendered on /cv/ via _layouts/cv.liquid.
+# Section order here = render order on the page.
+# Supported types: map, list, nested_list, time_table, list_groups.
 
 - title: General Information
   type: map
   contents:
     - name: Name
-      value: Ozren Cirkovic (cirioz)
+      value: Ozren Ćirković
+    - name: Online
+      value: cirioz
+    - name: Title
+      value: Full Stack QA Engineer
     - name: Languages
-      value: English, BCS
+      value: English, Bosnian/Croatian/Serbian
+    - name: GitHub
+      value: <a href="https://github.com/cirioz" target="_blank" rel="noopener noreferrer">github.com/cirioz</a>
+    - name: Email
+      value: <a href="mailto:ozren@protonmail.ch">ozren@protonmail.ch</a>
 
-- title: Currently
+- title: About me
+  type: list
+  contents:
+    - >-
+      QA Automation Engineer with hands-on experience in Python, Pytest,
+      Playwright, and Selenium across full-stack applications. Proven track
+      record of building test infrastructure from scratch, automating E2E and
+      regression testing, and integrating quality gates into CI/CD pipelines.
+      Keen interest in life sciences and bioinformatics, eager to apply testing
+      expertise in a domain that drives real impact in precision medicine and
+      drug development. ISTQB certified.
+
+- title: Experience
   type: time_table
   contents:
     - title: QA Engineer
-      institution: ""
-      year: 20xx — present
+      institution: Evolvewell d.o.o.
+      year: 2025 — present
       description:
-        - Manual & automated testing
-        - Picking up devops and frontend along the way
+        - Frontend bug fixing and UI polish
+        - E2E test infrastructure
+        - QA process automation
+        - Backend validation
+        - Manual QA
+        - Test tool development
+        - Web app frontend testing — automation
+        - Web app frontend testing — manual
 
-- title: Interests
+    - title: QA Automation Engineer
+      institution: Sigmoid d.o.o.
+      year: 2022 — 2025
+      description:
+        - Web app frontend testing — manual and automation
+        - Test tool development
+        - API testing
+        - Mobile frontend testing — manual and automation
+        - Visual regression testing
+
+    - title: QA Manual Tester
+      institution: Upwork
+      year: 2021 — 2022
+      description:
+        - Mobile app testing
+        - Data sheet validation
+        - Frontend functional testing
+
+- title: Selected projects
+  type: time_table
+  contents:
+    - title: AI-native SaaS coaching platform
+      institution: React · TypeScript · TanStack · Playwright
+      description:
+        - >-
+          Sole QA engineer for an AI-native coaching SaaS platform built with
+          React, TypeScript, and TanStack.
+        - >-
+          Implemented QA procedures and processes for the team, including
+          structured test workflows and a PR-based QA handoff system.
+        - >-
+          Built a GitHub Actions bot to automate QA labeling and streamline
+          the pull-request pipeline.
+        - >-
+          Performed manual exploratory, smoke, and regression testing across
+          the full product during active development.
+        - >-
+          Identified and resolved UI defects directly in the codebase, aligning
+          components to Figma design specifications.
+        - >-
+          Established a Playwright E2E testing framework with a page-object-model
+          architecture and automated login flows.
+        - >-
+          Implemented test-user lifecycle management and database seeding for
+          reliable test environments.
+        - >-
+          Automated <code>data-testid</code> attribute generation on production
+          components to enable stable test selectors.
+        - >-
+          Validated backend logic including subscription flows and third-party
+          API integrations.
+
+    - title: Frontend E2E test automation — Web
+      institution: Selenium · Python · OpenCV · BeautifulSoup
+      description:
+        - >-
+          Built E2E, smoke, regression, and integration test suites for desktop
+          back-office applications covering user management, parking-space
+          reservation scheduling, EV charging, and rental of electric bikes
+          and scooters.
+        - >-
+          Built parallel suites for a different back-office application focused
+          on user, dealership, machine, dealer, and client management.
+        - >-
+          Designed and implemented a visual-regression testing suite for a web
+          platform without DOM access. Used OpenCV for image comparison and
+          template matching, BeautifulSoup for parsing, Selenium for browser
+          automation, and Pytest plus Requests for HTTP and orchestration.
+          Image processing, ROI detection, and string parsing kept UI consistency
+          in check across releases and reduced manual QA effort substantially.
+
+    - title: Frontend E2E test automation — Mobile
+      institution: Appium · Python · Pytest
+      description:
+        - >-
+          Built end-to-end mobile-app tests with Appium and Python, simulating
+          real user interactions.
+        - >-
+          Designed a robust, scalable framework on Pytest with the
+          Page Object Model.
+        - >-
+          Integrated automated tests into the CI/CD pipeline for continuous
+          validation on every deployment.
+
+    - title: Backend E2E test automation
+      institution: Python · Requests · Pytest
+      description:
+        - >-
+          Built end-to-end backend-service tests covering APIs for reservation
+          scheduling, vehicle charging, rental services, permissions, clients,
+          machines, dealers, and dealerships.
+        - >-
+          Designed a Pytest-based framework for comprehensive backend functional
+          testing.
+        - >-
+          Validated RESTful APIs with focus on response accuracy, data integrity,
+          and performance under varied conditions.
+
+- title: Education
+  type: time_table
+  contents:
+    - title: CS50 — Introduction to Computer Science
+      institution: Harvard University (online)
+      description:
+        - Computer-science fundamentals and programming.
+
+    - title: Computer Graphics in Engineering
+      institution: Faculty of Technical Sciences, University of Novi Sad
+      description: []
+
+- title: Certifications
+  type: time_table
+  contents:
+    - title: ISTQB Foundation Level Certified Tester
+      institution: ISTQB
+      description: []
+
+- title: Skills
   type: nested_list
   contents:
-    - title: Tech
+    - title: Languages
       items:
-        - QA, test automation
-        - DevOps, CI/CD
-        - Frontend
-    - title: Creative
-      items:
-        - TouchDesigner
-        - Drawing
-        - Music
+        - Python
+        - JavaScript
+        - TypeScript
 
-- title: Other
-  type: list
-  contents:
-    - This is a placeholder CV. Fill in education, experience, projects,
-      and links over time. The data lives in <code>_data/cv.yml</code>.
+    - title: Test automation
+      items:
+        - Pytest
+        - Selenium
+        - Playwright
+        - Appium
+        - Postman / Swagger
+        - Visual regression (OpenCV)
+
+    - title: Backend & data
+      items:
+        - Requests
+        - BeautifulSoup
+        - PostgreSQL
+        - Pandas (basic)
+
+    - title: DevOps & tooling
+      items:
+        - GitHub Actions
+        - Linux
+
+    - title: Security
+      items:
+        - Security testing
+        - OWASP Top 10
