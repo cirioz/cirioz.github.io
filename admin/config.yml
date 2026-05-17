@@ -1,0 +1,102 @@
+# Sveltia CMS configuration for cirioz/cirioz.github.io
+# Reference: https://sveltiacms.app/en/docs/configuration
+
+backend:
+  name: github
+  repo: cirioz/cirioz.github.io
+  branch: main
+  # No `base_url` means we authenticate via Personal Access Token (PAT).
+  # On the login screen, click "Sign in with Token" — the prompt links you
+  # to a GitHub PAT generation page with the right scopes pre-selected.
+
+# Where image/media uploads from the editor go. Inside posts the images are
+# referenced via the public_folder path so they resolve at runtime.
+media_folder: "assets/img/uploads"
+public_folder: "/assets/img/uploads"
+
+# Open the site preview in a new tab when clicking "View" inside the editor.
+site_url: https://cirioz.github.io
+display_url: https://cirioz.github.io
+logo_url: https://cirioz.github.io/assets/img/projects/placeholder.svg
+
+# Markdown widget toolbar — keep it focused.
+editor:
+  preview: true
+
+collections:
+  # ──────────────────────────────────────────────────────────────────────
+  # Blog posts
+  # ──────────────────────────────────────────────────────────────────────
+  - name: posts
+    label: Blog posts
+    label_singular: Post
+    description: >-
+      Devlogs, tutorials, drawing/touchdesigner/music updates, weekly recaps.
+      Tags drive the navbar dropdown — see _data/blog_menu.yml for the canonical list.
+    folder: "_posts"
+    create: true
+    delete: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    extension: md
+    format: yaml-frontmatter
+    summary: "{{date | date('YYYY-MM-DD')}} — {{title}}"
+    sortable_fields: [date, title]
+    view_filters:
+      - { label: Drawing,        field: tags, pattern: drawing }
+      - { label: TouchDesigner,  field: tags, pattern: touchdesigner }
+      - { label: Music,          field: tags, pattern: music }
+      - { label: Tutorials,      field: tags, pattern: -tutorials }
+      - { label: Featured,       field: featured, pattern: true }
+    fields:
+      - { name: layout,      label: Layout,      widget: hidden, default: post }
+      - { name: title,       label: Title,       widget: string }
+      - { name: date,        label: Date,        widget: datetime, format: "YYYY-MM-DD HH:mm:ss ZZ", default: "" }
+      - { name: description, label: Description, widget: text, required: false, hint: "One-liner shown on the blog index." }
+      - { name: tags,        label: Tags,        widget: list, default: [], hint: "Use menu tags like drawing, touchdesigner, music, c-tutorials, python-projects. See _data/blog_menu.yml." }
+      - { name: categories,  label: Categories,  widget: list, default: [], required: false, hint: "Optional secondary axis (e.g. weekly, notes)." }
+      - { name: featured,    label: Featured?,   widget: boolean, default: false, required: false }
+      - { name: thumbnail,   label: Thumbnail,   widget: image, required: false, hint: "Optional thumbnail shown on the blog index." }
+      - { name: giscus_comments, label: Comments?, widget: boolean, default: false, required: false }
+      - { name: body,        label: Body,        widget: markdown }
+
+  # ──────────────────────────────────────────────────────────────────────
+  # Projects (cards on /projects/)
+  # ──────────────────────────────────────────────────────────────────────
+  - name: projects
+    label: Projects
+    label_singular: Project
+    description: Cards displayed on /projects/. Each project has a cover image and an optional long-form body.
+    folder: "_projects"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    extension: md
+    format: yaml-frontmatter
+    fields:
+      - { name: layout,      label: Layout,      widget: hidden, default: page }
+      - { name: title,       label: Title,       widget: string }
+      - { name: description, label: Description, widget: text, required: false }
+      - { name: img,         label: Cover image, widget: image, required: false }
+      - { name: importance,  label: Importance,  widget: number, default: 1, value_type: int, hint: "Lower = appears earlier on the projects page." }
+      - { name: category,    label: Category,    widget: string, default: meta, hint: "Filter chip on the projects page." }
+      - { name: giscus_comments, label: Comments?, widget: boolean, default: false, required: false }
+      - { name: body,        label: Body,        widget: markdown }
+
+  # ──────────────────────────────────────────────────────────────────────
+  # News / short announcements (currently hidden from nav, but kept for
+  # the homepage announcements strip if you ever turn it back on)
+  # ──────────────────────────────────────────────────────────────────────
+  - name: news
+    label: News
+    label_singular: News item
+    description: One-line announcements. Currently hidden in the nav; re-enable in _pages/news.md and _pages/about.md to show them.
+    folder: "_news"
+    create: true
+    delete: true
+    extension: md
+    format: yaml-frontmatter
+    fields:
+      - { name: layout, label: Layout, widget: hidden, default: post }
+      - { name: date,   label: Date,   widget: datetime, format: "YYYY-MM-DD HH:mm:ss ZZ" }
+      - { name: inline, label: Inline?, widget: boolean, default: true }
+      - { name: body,   label: Body,    widget: markdown }
