@@ -1,3 +1,4 @@
+# Auto-deploy smoke test — touched at 2026-05-17T19:28:39Z
 # Build and deploy the al-folio site to the gh-pages branch.
 # Personalized for cirioz/cirioz.github.io. Based on the upstream al-folio
 # workflow but trimmed (no docker/lighthouse/prettier sibling workflows in
