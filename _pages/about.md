@@ -2,6 +2,8 @@
 layout: about
 title: about
 permalink: /
+nav: true
+nav_order: 2
 subtitle: Hi, I'm <b>Ozren</b> — also <b>cirioz</b> online. QA & automation by day; building, drawing, patching, and learning by night.
 
 # Profile photo column is intentionally hidden for now.
@@ -18,7 +20,7 @@ selected_papers: false # we don't use the publications feature
 social: true # social icons at the bottom of the page
 
 announcements:
-  enabled: true # short news items pulled from _news/
+  enabled: false # short news items pulled from _news/
   scrollable: true
   limit: 5
 
