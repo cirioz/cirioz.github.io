@@ -620,21 +620,27 @@ third_party_libraries:
 # -----------------------------------------------------------------------------
 # Get external JSON data
 # -----------------------------------------------------------------------------
-
-jekyll_get_json:
-  - data: resume
-    json: assets/json/resume.json # it can also be an url
-
-jsonresume:
-  - basics
-  - work
-  - education
-  - publications
-  - projects
-  - volunteer
-  - awards
-  - certificates
-  - skills
-  - languages
-  - interests
-  - references
+#
+# Disabled — the CV page on this site is driven by _data/cv.yml (al-folio's
+# native YAML format), not by the JSONResume schema. Re-enable both blocks
+# below if you ever want to switch over to a resume.json source. While
+# `jekyll_get_json` is set, the cv layout will load its data and IGNORE
+# _data/cv.yml entirely.
+#
+# jekyll_get_json:
+#   - data: resume
+#     json: assets/json/resume.json
+#
+# jsonresume:
+#   - basics
+#   - work
+#   - education
+#   - publications
+#   - projects
+#   - volunteer
+#   - awards
+#   - certificates
+#   - skills
+#   - languages
+#   - interests
+#   - references
