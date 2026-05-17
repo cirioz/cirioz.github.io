@@ -37,26 +37,15 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/cv/";
           },
-        },{id: "post-drawing-week-of-may-17",
+        },{id: "post-test-drawing",
         
-          title: "Drawing — week of May 17",
+          title: "Test Drawing",
         
-        description: "Sketches and studies from the week. Posting these to keep myself accountable.",
+        description: "Test Drawing Post",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/blog/2026/drawing-week-of-may-17/";
-          
-        },
-      },{id: "post-touchdesigner-devlog-001-getting-started",
-        
-          title: "TouchDesigner devlog #001 — getting started",
-        
-        description: "First entry of an ongoing devlog. Setup, first patch, and what I&#39;m aiming for next.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2026/touchdesigner-devlog-001/";
+            window.location.href = "/blog/2026/test-drawing/";
           
         },
       },{id: "post-how-to-mirror-an-android-screen-on-a-mac",
@@ -70,26 +59,7 @@ ninja.data = [{
             window.location.href = "/blog/2026/screen-mirror-android-on-mac/";
           
         },
-      },{id: "post-hello-this-is-the-site",
-        
-          title: "Hello — this is the site",
-        
-        description: "A short note on why this exists and what you&#39;ll find here.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/blog/2026/hello-this-is-the-site/";
-          
-        },
-      },{id: "news-site-is-live-first-posts-up-backfilling-content-as-i-go",
-          title: 'Site is live. First posts up. Backfilling content as I go.',
-          description: "",
-          section: "News",},{id: "projects-this-site",
-          title: 'this site',
-          description: "The site you&#39;re reading. Built on Jekyll + al-folio, hosted on GitHub Pages.",
-          section: "Projects",handler: () => {
-              window.location.href = "/projects/1_personal_site/";
-            },},{
+      },{
         id: 'social-email',
         title: 'email',
         section: 'Socials',
