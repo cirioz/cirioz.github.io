@@ -30,6 +30,10 @@
         - { title: learning,  tag: python-learning }
         - { title: projects,  tag: python-projects }
 
-- { title: touchdesigner, tag: touchdesigner }
-- { title: drawing,       tag: drawing }
-- { title: music,         tag: music }
+- { title: biology,        tag: biology }
+- { title: bioinformatics, tag: bioinformatics }
+- { title: math,           tag: math }
+
+- { title: touchdesigner,  tag: touchdesigner }
+- { title: drawing,        tag: drawing }
+- { title: music,          tag: music }

@@ -125,6 +125,9 @@ that leaf.
 | programming → Python → tutorials | `python-tutorials` |
 | programming → Python → learning | `python-learning` |
 | programming → Python → projects | `python-projects` |
+| biology | `biology` |
+| bioinformatics | `bioinformatics` |
+| math | `math` |
 | touchdesigner | `touchdesigner` |
 | drawing | `drawing` |
 | music | `music` |

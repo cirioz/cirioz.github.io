@@ -33,6 +33,8 @@ This is a personal scratch pad — devlogs, tutorials, and weekly recaps.
 Hover **blog** in the nav to drill in by topic. The sections are:
 
 - **programming** → C, C++, JS/TS, Python · each split into *tutorials*, *learning*, *projects*
+- **biology** & **bioinformatics** — life-sciences notes, papers, and study tracks
+- **math** — notes and study tracks
 - **touchdesigner** — patches, devlogs, and experiments
 - **drawing** — sketches, studies, weekly drops
 - **music** — projects and notes (coming soon)

@@ -51,6 +51,9 @@ blog
 │   ├── C++          ─ cpp-tutorials, cpp-learning, cpp-projects
 │   ├── JS/TS        ─ jsts-tutorials, jsts-learning, jsts-projects
 │   └── Python       ─ python-tutorials, python-learning, python-projects
+├── biology          ─ biology
+├── bioinformatics   ─ bioinformatics
+├── math             ─ math
 ├── touchdesigner    ─ touchdesigner
 ├── drawing          ─ drawing
 └── music            ─ music
