@@ -114,6 +114,53 @@ sort order (lower = earlier).
 
 ---
 
+## Writing without git: the `/admin/` CMS
+
+The site has [Sveltia CMS](https://sveltiacms.app/) wired up at
+<https://cirioz.github.io/admin/>. From any browser (desktop, iPad, phone)
+you can:
+
+- write a new post in a WYSIWYG editor
+- drag images straight into the post body or thumbnail field
+- pick tags from the menu vocabulary (drawing, touchdesigner, c-tutorials, …)
+- click "Publish" — the CMS commits markdown + images to `main` on your
+  behalf, and the deploy workflow rebuilds the site
+
+### First-time login
+
+1. Open <https://cirioz.github.io/admin/> in any browser.
+2. Click **Sign in with Token**.
+3. The dialog will link you to the GitHub PAT generation page with the
+   right scopes pre-selected — generate the token and copy it.
+4. Paste the token back into Sveltia. It's stored in your browser's
+   localStorage on that device only (regenerate it if it expires).
+
+### Where things are saved
+
+| Field in CMS         | Where it ends up in the repo                             |
+|----------------------|----------------------------------------------------------|
+| Blog post body       | `_posts/YYYY-MM-DD-<slug>.md`                            |
+| Project entry        | `_projects/<slug>.md`                                    |
+| Inline images / thumb| `assets/img/uploads/<filename>`                          |
+
+The CMS configuration (which fields exist, where things go) lives in
+[`admin/config.yml`](./admin/config.yml). Edit it to add new collections
+or fields.
+
+### Drawings, specifically
+
+For a "drawing-of-the-day" workflow:
+
+1. Open `/admin/` → **New Post**.
+2. Title: e.g. `2026-05-17 — pencil sketches`.
+3. Tags: `drawing` (and optionally finer tags like `studies`, `sketchbook`).
+4. Drag the image(s) into the body. They get committed to
+   `assets/img/uploads/`.
+5. Hit **Publish**. The deploy workflow runs; the post appears under
+   `blog → drawing` within a few minutes.
+
+---
+
 ## Site map
 
 ```
