@@ -9,6 +9,9 @@ Built on [Jekyll](https://jekyllrb.com/) + the
 [al-folio](https://github.com/alshedivat/al-folio) theme. Deployed by GitHub
 Actions on every push to `main`.
 
+> **Looking for "how do I publish a post?"** → see [GUIDE.md](./GUIDE.md).
+> This README covers the build setup; GUIDE.md covers the day-to-day flow.
+
 ---
 
 ## Writing a new post
