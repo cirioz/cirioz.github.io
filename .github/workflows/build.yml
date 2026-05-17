@@ -1,26 +1,19 @@
-# Auto-deploy smoke test — touched at 2026-05-17T19:28:39Z
-# Build and deploy the al-folio site to the gh-pages branch.
-# Personalized for cirioz/cirioz.github.io. Based on the upstream al-folio
-# workflow but trimmed (no docker/lighthouse/prettier sibling workflows in
-# this repo, so the path-filter exclusions for them were removed).
-
-name: Build & deploy site
+name: Build site
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
   workflow_dispatch:
 
 permissions:
   contents: write
 
 concurrency:
-  group: pages-${{ github.ref }}
+  group: build-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -59,7 +52,6 @@ jobs:
           purgecss -c purgecss.config.js
 
       - name: Deploy to gh-pages
-        if: github.event_name != 'pull_request'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           folder: _site
