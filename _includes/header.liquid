@@ -60,7 +60,9 @@
           {% assign sorted_pages = site.pages | sort: 'nav_order' %}
           {% for p in sorted_pages %}
             {% if p.nav and p.autogen == null %}
-              {% if p.dropdown %}
+              {% if p.permalink == '/blog/' %}
+                {%- include blog_nav_dropdown.liquid -%}
+              {% elsif p.dropdown %}
                 {% assign has_active_child = false %}
                 {% for child in p.children %}
                   {% if page.title == child.title %}

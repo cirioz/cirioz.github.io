@@ -33,23 +33,48 @@ Actions on every push to `main`.
 
 3. Push to `main`. GitHub Actions builds and deploys; site updates in ~2 min.
 
-### Categories
+### Tags drive the navbar dropdown
 
-Posts are organized by these categories. A post can have several — separate
-with spaces in the front matter (e.g. `categories: tutorials programming`).
+The "blog" navbar item opens a multi-level dropdown menu. Each *leaf* in
+the menu maps to a single tag, and clicking it shows posts with that tag
+at `/blog/tag/<tag>/` (al-folio's auto-generated tag index).
 
-| Category        | Use for |
-|-----------------|---------|
-| `programming`   | Code, dev, QA, automation, devops, frontend |
-| `tutorials`     | Step-by-step how-tos |
-| `touchdesigner` | TouchDesigner patches and devlogs |
-| `drawing`       | Sketches, studies, drawing devlogs |
-| `music`         | Music projects, theory notes, listening notes |
-| `notes`         | Short notes that don't fit a topic |
-| `weekly`        | Week / day recaps (works alongside any topic) |
+The menu structure lives in `_data/blog_menu.yml`. The current taxonomy:
 
-The complete list lives in `_config.yml` under `display_categories`.
-Each category gets an auto-generated index at `/blog/category/<name>/`.
+```
+blog
+├── programming
+│   ├── C            ─ c-tutorials, c-learning, c-projects
+│   ├── C++          ─ cpp-tutorials, cpp-learning, cpp-projects
+│   ├── JS/TS        ─ jsts-tutorials, jsts-learning, jsts-projects
+│   └── Python       ─ python-tutorials, python-learning, python-projects
+├── touchdesigner    ─ touchdesigner
+├── drawing          ─ drawing
+└── music            ─ music
+```
+
+In each post's front matter, use the tag string verbatim:
+
+```yaml
+tags: c-tutorials       # appears under blog → programming → C → tutorials
+# or, multiple:
+tags: c-tutorials drawing meta
+```
+
+A post can carry several leaf tags — it'll appear under each one.
+
+Free-form descriptive tags (e.g. `android`, `scrcpy`, `setup`) can also be
+mixed in; they generate their own /blog/tag/<tag>/ pages but aren't shown
+in the navbar.
+
+Categories (`categories: notes weekly`) still work too if you want a
+secondary axis (e.g. format vs. topic), but the primary navigation is by
+tag.
+
+> **Empty leaves return 404.** A leaf only has a working page once at
+> least one post carries that tag. If a menu item leads to "Page not
+> found", just write your first post for that bucket — the page will
+> exist on next build.
 
 ### Adding images to a post
 

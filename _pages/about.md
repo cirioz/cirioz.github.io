@@ -16,13 +16,11 @@ subtitle: Hi, I'm <b>Ozren</b> — also <b>cirioz</b> online. QA & automation by
 #   more_info: >
 #     <p>Find me on <a href="https://github.com/cirioz">GitHub</a></p>
 
-selected_papers: false # we don't use the publications feature
-social: true # social icons at the bottom of the page
+selected_papers: false
+social: true
 
 announcements:
-  enabled: false # short news items pulled from _news/
-  scrollable: true
-  limit: 5
+  enabled: false
 
 latest_posts:
   enabled: true
@@ -30,21 +28,16 @@ latest_posts:
   limit: 5
 ---
 
-This is a personal scratch pad. I work in **QA**, dabble in **automation**, **devops**,
-and **frontend**, and on the side I make things in **TouchDesigner**, draw, and play
-with **music**. The site is part public notebook, part devlog.
+This is a personal scratch pad — devlogs, tutorials, and weekly recaps.
 
-You'll find:
+Hover **blog** in the nav to drill in by topic. The sections are:
 
-- **[blog](/blog/)** — devlogs, tutorials, and weekly recaps. Filter by category:
-  [programming](/blog/category/programming/),
-  [tutorials](/blog/category/tutorials/),
-  [touchdesigner](/blog/category/touchdesigner/),
-  [drawing](/blog/category/drawing/),
-  [music](/blog/category/music/),
-  [notes](/blog/category/notes/),
-  [weekly](/blog/category/weekly/).
-- **[projects](/projects/)** — things I've built, broken, or am still working on.
-- **[cv](/cv/)** — what I do for work, in long form.
+- **programming** → C, C++, JS/TS, Python · each split into *tutorials*, *learning*, *projects*
+- **touchdesigner** — patches, devlogs, and experiments
+- **drawing** — sketches, studies, weekly drops
+- **music** — projects and notes (coming soon)
 
-Posts go up roughly weekly, sometimes daily when I'm in the middle of something.
+Or just click [blog](/blog/) for the full firehose. Older posts live by year:
+[2026](/blog/2026/), [2025](/blog/2025/), …
+
+Working on real things on **[projects](/projects/)**. Long-form "what I do" lives on **[cv](/cv/)**.

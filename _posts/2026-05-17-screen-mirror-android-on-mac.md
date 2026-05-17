@@ -3,7 +3,7 @@ layout: post
 title: "How to mirror an Android screen on a Mac"
 date: 2026-05-17 14:05:00 +0200
 description: A 5-minute setup with scrcpy that I keep re-discovering. Wireless and USB both covered.
-tags: android scrcpy macos
+tags: tutorials android scrcpy macos
 categories: tutorials programming
 featured: false
 giscus_comments: false

@@ -1,0 +1,35 @@
+# Multi-level dropdown for the "blog" navbar item.
+#
+# Each leaf has a `tag`; a leaf renders as a link to /blog/tag/<tag>/.
+# Tag your post with the same string (in the post's `tags:` front matter)
+# and it will appear under that leaf automatically.
+#
+# A node with `children:` becomes a sub-menu that cascades on hover.
+# Three levels of nesting are supported.
+
+- title: programming
+  children:
+    - title: C
+      children:
+        - { title: tutorials, tag: c-tutorials }
+        - { title: learning,  tag: c-learning }
+        - { title: projects,  tag: c-projects }
+    - title: C++
+      children:
+        - { title: tutorials, tag: cpp-tutorials }
+        - { title: learning,  tag: cpp-learning }
+        - { title: projects,  tag: cpp-projects }
+    - title: JS/TS
+      children:
+        - { title: tutorials, tag: jsts-tutorials }
+        - { title: learning,  tag: jsts-learning }
+        - { title: projects,  tag: jsts-projects }
+    - title: Python
+      children:
+        - { title: tutorials, tag: python-tutorials }
+        - { title: learning,  tag: python-learning }
+        - { title: projects,  tag: python-projects }
+
+- { title: touchdesigner, tag: touchdesigner }
+- { title: drawing,       tag: drawing }
+- { title: music,         tag: music }

@@ -1,0 +1,65 @@
+{%- comment -%}
+  Multi-level dropdown for the "blog" navbar item.
+  Data source: _data/blog_menu.yml
+  Behavior: hover-to-cascade on desktop; click-to-toggle on mobile (Bootstrap default).
+  Up to 3 levels of nesting are supported.
+{%- endcomment -%}
+
+<li class="nav-item dropdown blog-dropdown {% if page.url contains '/blog' %}active{% endif %}">
+  <a
+    class="nav-link dropdown-toggle"
+    href="{{ '/blog/' | relative_url }}"
+    id="navbarBlogDropdown"
+    role="button"
+    data-toggle="dropdown"
+    aria-haspopup="true"
+    aria-expanded="false"
+  >
+    blog
+  </a>
+  <ul class="dropdown-menu dropdown-menu-right blog-dropdown-menu" aria-labelledby="navbarBlogDropdown">
+    {%- for item in site.data.blog_menu -%}
+      {%- if item.children -%}
+        <li class="dropdown-submenu">
+          <a class="dropdown-item dropdown-toggle" href="#" tabindex="0">{{ item.title }}</a>
+          <ul class="dropdown-menu">
+            {%- for sub in item.children -%}
+              {%- if sub.children -%}
+                <li class="dropdown-submenu">
+                  <a class="dropdown-item dropdown-toggle" href="#" tabindex="0">{{ sub.title }}</a>
+                  <ul class="dropdown-menu">
+                    {%- for leaf in sub.children -%}
+                      <li>
+                        <a class="dropdown-item" href="{{ leaf.tag | prepend: '/blog/tag/' | append: '/' | relative_url }}">
+                          {{ leaf.title }}
+                        </a>
+                      </li>
+                    {%- endfor -%}
+                  </ul>
+                </li>
+              {%- else -%}
+                <li>
+                  <a class="dropdown-item" href="{{ sub.tag | prepend: '/blog/tag/' | append: '/' | relative_url }}">
+                    {{ sub.title }}
+                  </a>
+                </li>
+              {%- endif -%}
+            {%- endfor -%}
+          </ul>
+        </li>
+      {%- else -%}
+        <li>
+          <a class="dropdown-item" href="{{ item.tag | prepend: '/blog/tag/' | append: '/' | relative_url }}">
+            {{ item.title }}
+          </a>
+        </li>
+      {%- endif -%}
+    {%- endfor -%}
+    <li><div class="dropdown-divider"></div></li>
+    <li>
+      <a class="dropdown-item" href="{{ '/blog/' | relative_url }}">
+        <em>all posts</em>
+      </a>
+    </li>
+  </ul>
+</li>
